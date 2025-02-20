@@ -1,0 +1,118 @@
+num1=30
+num2=59
+answer=num1-num2
+print("your answer is",answer)
+
+
+num1=2024
+num2=7
+sum=num1+num2
+d=num1-num2
+p=num1*num2
+q=num1/num2
+print("your sum is",sum)
+print("your difference is",d)
+print("your product is",p)
+print("your quotient is",q)
+
+
+min=float(input("enter the number of minutes"))
+hr=min/60
+print("the number of hours",hr)
+
+dol=float(input("enter the amount of rupees you have "))
+rs=dol/48
+print("the amount of dollars you have is ",rs)
+
+
+dol=float(input("enter the amount of dollars you have "))
+rs=dol*48
+pnd=rs*70
+print("the amount of pounds you have is ",pnd)
+
+
+kgs=float(input("enter the amount of kgs you have "))
+grams=kgs*1000
+print("the amount of grams you have is ",grams)
+
+
+b=float(input("enter the bytes you have "))
+kb=b*1024
+mb=kb*1024
+gb=mb*1024
+print("you have",kb,"KBs")
+print("you have",mb,"MBs")
+print("you have",gb,"GBs")
+
+
+c=float(input("enter the temperature in celcius you have "))
+f=(9/5*c)+32
+print("the temperature in fahrenheit is",f)
+
+f=float(input("enter the temperature in fahrenheit you have "))
+c=5/9*(f-32)
+print("the temperature in celcius is",c)
+
+P=float(input("enter the principle amount "))
+T=float(input("enter the time period in years "))
+R=int(input("enter the rate of interest in percentage "))
+I=P*R*T/100
+print("the interest is equal to",I)
+
+L=float(input("enter the LENGTH of your square "))
+A=L*L
+P=4*L
+print("the area of your square",A)
+print("the perimeter of your square",P)
+
+
+L=float(input("enter the LENGTH of your rectangle "))
+B=float(input("enter the BREADTH of your rectangle "))
+A=L*B
+P=2*(L+B)
+print("the area of your rectangle ",A)
+print("the perimeter of your rectangle ",P)
+
+R=float(input("enter the radius of your circle "))
+A=22/7*R*R
+print("the area of your circle ",A)
+
+H=float(input("enter the height of your triangle "))
+L=float(input("enter the length of triangle"))
+A=H*L/2
+print("the area of your triangle ",A)
+
+
+
+GS=float(input("enter your gross salary "))
+A=0.1*GS
+D=3/100*GS
+NS=GS+A-D
+print("the net salary is ",NS)
+
+
+
+GS=float(input("enter your gross sales "))
+D=0.1*GS
+NS=GS-D
+print("the net sales is ",NS)
+
+
+a=float(input("enter your marks in subject 1 "))
+b=float(input("enter your marks in subject 2 "))
+c=float(input("enter your marks in subject 3 "))
+t=a+b+c
+avg=(a+b+c)/3
+print("your total marks combined are ",t)
+print("your average marks combined are ",avg)
+
+
+a=float(input("enter a number a="))
+b=float(input("enter a number b="))
+print("Before swapping:")
+print("a =", a)
+print("b =", b)
+a, b = b, a
+print("\nAfter swapping:")
+print("a =", a)
+print("b =", b)
