@@ -8,4 +8,4 @@ print(data.count(name))
 n = input("enter a number: ")
 n = int(n)
 for i in range(n,0,-1):
-      Print('*'*i)
+      print('*'*i)
