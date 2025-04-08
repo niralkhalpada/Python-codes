@@ -1,0 +1,11 @@
+name = "niral"
+with open('name.txt', 'r') as file:
+ data = file.read()
+print(data.count(name))
+
+
+
+n = input("enter a number: ")
+n = int(n)
+for i in range(n,0,-1):
+      Print('*'*i)
