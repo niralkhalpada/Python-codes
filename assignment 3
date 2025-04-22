@@ -1,0 +1,184 @@
+#------------------------------------IF/ELSE STATEMENTS-------------------------------------------
+
+#1.
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+
+if num1 > num2:
+    print(f"Largest: {num1}")
+    print(f"Smallest: {num2}")
+else:
+    print(f"Largest: {num2}")
+    print(f"Smallest: {num1}")
+
+#2.
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+num3 = float(input("Enter the third number: "))
+
+if num1 >= num2 and num1 >= num3:
+    print(f"Largest: {num1}")
+elif num2 >= num1 and num2 >= num3:
+    print(f"Largest: {num2}")
+else:
+    print(f"Largest: {num3}")
+
+if num1 <= num2 and num1 <= num3:
+    print(f"Smallest: {num1}")
+elif num2 <= num1 and num2 <= num3:
+    print(f"Smallest: {num2}")
+else:
+    print(f"Smallest: {num3}")
+
+#3. 
+num = int(input("Enter a number: "))
+
+if num % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+#4. 
+num = int(input("Enter a number: "))
+
+if num % 10 == 0:
+    print(f"{num} is divisible by 10.")
+else:
+    print(f"{num} is NOT divisible by 10.")
+
+#5. 
+age = int(input("Enter your age: "))
+
+if age < 18:
+    print("Minor")
+else:
+    print("Major")
+
+#6.
+num = input("Enter a number: ")
+print(f"Number of digits: {len(num)}")
+
+#7.
+year = int(input("Enter a year: "))
+
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print(f"{year} is a leap year.")
+else:
+    print(f"{year} is NOT a leap year.")
+
+#8. 
+angle1 = float(input("Enter first angle: "))
+angle2 = float(input("Enter second angle: "))
+angle3 = float(input("Enter third angle: "))
+
+if angle1 + angle2 + angle3 == 180:
+    print("Valid triangle.")
+else:
+    print("Invalid triangle.")
+
+#9. 
+num = float(input("Enter a number: "))
+
+if num >= 0:
+    print(f"Absolute value: {num}")
+else:
+    print(f"Absolute value: {-num}")
+
+#10. 
+length = float(input("Enter the length: "))
+breadth = float(input("Enter the breadth: "))
+
+area = length * breadth
+perimeter = 2 * (length + breadth)
+
+if area > perimeter:
+    print("Area is greater than perimeter.")
+else:
+    print("Perimeter is greater than or equal to area.")
+
+#11. 
+x1, y1 = map(float, input("Enter x1 and y1: ").split())
+x2, y2 = map(float, input("Enter x2 and y2: ").split())
+x3, y3 = map(float, input("Enter x3 and y3: ").split())
+
+if (y2 - y1)(x3 - x2) == (y3 - y2)(x2 - x1):
+    print("The points lie on the same straight line.")
+else:
+    print("The points do NOT lie on the same straight line.")
+
+#12. 
+import math
+
+x_center, y_center = map(float, input("Enter circle center (x, y): ").split())
+radius = float(input("Enter radius: "))
+x, y = map(float, input("Enter point coordinates (x, y): ").split())
+
+distance = math.sqrt((x - x_center)*2 + (y - y_center)*2)
+
+if distance < radius:
+    print("Point is inside the circle.")
+elif distance == radius:
+    print("Point is on the circle.")
+else:
+    print("Point is outside the circle.")
+
+#13. 
+words = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+         "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+         "seventeen", "eighteen", "nineteen"]
+
+num = int(input("Enter a number (0-19): "))
+
+if 0 <= num <= 19:
+    print(f"The word representation is: {words[num]}")
+else:
+    print("Invalid input. Enter a number between 0 and 19.")
+
+#14. 
+marks = []
+for i in range(3):
+    score = input(f"Enter marks for subject {i + 1} (Absent = 'A'): ")
+    marks.append(score)
+
+total = 0
+failed = False
+grades = []
+
+for mark in marks:
+    if mark.upper() == 'A':
+        grades.append('NA')
+    else:
+        mark = int(mark)
+        total += mark
+
+        if mark <= 39:
+            grades.append('F')
+            failed = True
+        elif mark <= 44:
+            grades.append('P')
+        elif mark <= 49:
+            grades.append('C')
+        elif mark <= 54:
+            grades.append('B')
+        elif mark <= 59:
+            grades.append('B+')
+        elif mark <= 69:
+            grades.append('A')
+        elif mark <= 79:
+            grades.append('A+')
+        else:
+            grades.append('O')
+
+average = total / len(marks)
+
+print(f"Total: {total}")
+print(f"Average: {average:.2f}")
+print(f"Grades: {grades}")
+
+if failed:
+    print("Status: Fail")
+else:
+    print("Status: Pass")
+
+
+
