@@ -1,0 +1,52 @@
+#-----------------------------------------STRING--------------------------------------------------------------
+
+#1.
+text = input("Enter a string: ")
+
+vowel_count = 0
+vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
+
+for char in text:
+    if char in vowels:
+        vowel_count += 1
+
+print(f"Number of vowels: {vowel_count}")
+
+#2.
+text = input("Enter a string: ")
+lowercase_text = ""
+
+for char in text:
+    if 'A' <= char <= 'Z':
+       lowercase_text += chr(ord(char) + 32)
+    else:
+       lowercase_text += char
+
+print("Lowercase string:", lowercase_text)
+
+#3.
+
+str1 = input("Enter the first string: ")
+str2 = input("Enter the second string: ")
+
+if str1 in str2:
+    print(f'"{str1}" is present in "{str2}"')
+
+elif str2 in str1:
+    print(f'"{str2}" is present in "{str1}"')
+
+else:
+    print("Neither string is present in the other.")
+
+#4.
+OneString = input("Enter the String: ")
+RemoveString = input("Enter the part to be removed: ")
+
+modifiedString = OneString.replace(RemoveString,"")
+
+print(f"Modified string: {modifiedString}")
+
+#---------------------OR------------------------------
+
+OneString = input("Enter the String: ")
+RemoveString = input("Enter the part to be removed: ")
