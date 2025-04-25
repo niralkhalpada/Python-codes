@@ -1,0 +1,161 @@
+# 1
+def count_lower_upper(s):
+    result = {'lower': 0, 'upper': 0}
+    for ch in s:
+        if ch.islower():
+            result['lower'] += 1
+        elif ch.isupper():
+            result['upper'] += 1
+    return result
+
+print(count_lower_upper("Hello World! Python123"))
+
+# 2
+def compute(n):
+    n = str(n)
+    return int(n) + int(n*2) + int(n*3) + int(n*4)
+
+for i in range(4, 8):
+    print(f"{i} ->", compute(i))
+
+# 3
+def create_array(x, y, z, val):
+    return [[[val for _ in range(z)] for _ in range(y)] for _ in range(x)]
+
+arr = create_array(2, 2, 2, 1)
+print(arr)
+
+# 4
+def sum_avg(m1, m2, m3, m4, m5):
+    total = m1 + m2 + m3 + m4 + m5
+    avg = total / 5
+    return total, avg
+
+print(sum_avg(80, 70, 90, 85, 75))
+
+# 5
+def ispangram(s):
+    s = s.lower().replace(" ", "")
+    return set('abcdefghijklmnopqrstuvwxyz') <= set(s)
+
+print(ispangram("The quick brown fox jumps over the lazy dog"))
+
+# 6
+def cube_list(end):
+    return [(x, x**2, x**3) for x in range(1, end + 1)]
+
+print(cube_list(5))
+
+# 7
+def ispalindrome(s):
+    s = s.replace(" ", "").lower()
+    return s == s[::-1]
+
+print(ispalindrome("A man a plan a canal Panama"))
+
+# 8
+def convert(s):
+    words = s.split()
+    unique_sorted = sorted(set(words))
+    return ' '.join(unique_sorted)
+
+print(convert("red blue green red yellow green"))
+
+# 9
+def count_alpha_digits(s):
+    result = {'alphabets': 0, 'digits': 0}
+    for ch in s:
+        if ch.isalpha():
+            result['alphabets'] += 1
+        elif ch.isdigit():
+            result['digits'] += 1
+    return result
+
+print(count_alpha_digits("Python123 is Awesome 456"))
+
+# 10
+def frequency(s):
+    words = s.split()
+    freq = {}
+    for word in words:
+        freq[word] = freq.get(word, 0) + 1
+    return dict(sorted(freq.items()))
+
+print(frequency("hello world hello python world"))
+
+# 11
+def create_list(l1, l2):
+    return [x for x in l1 if x in l2]
+
+print(create_list([1, 2, 3, 4], [2, 4, 6]))
+
+# 12
+def prime_factors(n, i=2):
+    if n == 1:
+        return []
+    if n % i == 0:
+        return [i] + prime_factors(n // i, i)
+    else:
+        return prime_factors(n, i + 1)
+
+print(prime_factors(60))
+
+# 13
+def binary(n):
+    if n == 0:
+        return ''
+    return binary(n // 2) + str(n % 2)
+
+num = 13
+print(binary(num) or "0")  # handle case for 0
+
+# 14
+def count_vowels(s):
+    if not s:
+        return 0
+    return (1 if s[0].lower() in 'aeiou' else 0) + count_vowels(s[1:])
+
+print(count_vowels("Recursion is amazing"))
+
+# 15
+def reverse_list(lst):
+    if len(lst) == 0:
+        return []
+    return [lst[-1]] + reverse_list(lst[:-1])
+
+print(reverse_list([1, 2, 3, 4, 5]))
+
+# 16
+def power(a, b):
+    if b == 0:
+        return 1
+    return a * power(a, b - 1)
+
+print(power(2, 5))
+
+# 17
+def sanitize(lst):
+    if not lst:
+        return []
+    head = 0 if lst[0] < 0 else lst[0]
+    return [head] + sanitize(lst[1:])
+
+print(sanitize([5, -3, 4, -1, 2]))
+
+# 18
+def average(lst):
+    def helper(l, total=0, count=0):
+        if not l:
+            return total / count if count != 0 else 0
+        return helper(l[1:], total + l[0], count + 1)
+    return helper(lst)
+
+print(average([10, 20, 30, 40]))
+
+# 19
+def string_length(s):
+    if s == '':
+        return 0
+    return 1 + string_length(s[1:])
+
+print(string_length("recursive"))
