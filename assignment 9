@@ -1,0 +1,168 @@
+# 1
+class Complex:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    def __add__(self, other):
+        return Complex(self.real + other.real, self.imag + other.imag)
+
+    def __sub__(self, other):
+        return Complex(self.real - other.real, self.imag - other.imag)
+
+    def __mul__(self, other):
+        r = self.real * other.real - self.imag * other.imag
+        i = self.real * other.imag + self.imag * other.real
+        return Complex(r, i)
+
+    def __truediv__(self, other):
+        denom = other.real**2 + other.imag**2
+        r = (self.real * other.real + self.imag * other.imag) / denom
+        i = (self.imag * other.real - self.real * other.imag) / denom
+        return Complex(r, i)
+
+    def __str__(self):
+        return f"{self.real} + {self.imag}i"
+
+c1 = Complex(4, 5)
+c2 = Complex(2, 3)
+print("Add:", c1 + c2)
+print("Sub:", c1 - c2)
+print("Mul:", c1 * c2)
+print("Div:", c1 / c2)
+
+
+# 2
+class Matrix:
+    def __init__(self, mat):
+        self.mat = mat
+
+    def add(self, other):
+        return [[self.mat[i][j] + other.mat[i][j] for j in range(3)] for i in range(3)]
+
+    def multiply(self, other):
+        result = [[0]*3 for _ in range(3)]
+        for i in range(3):
+            for j in range(3):
+                for k in range(3):
+                    result[i][j] += self.mat[i][k] * other.mat[k][j]
+        return result
+
+    def transpose(self):
+        return [[self.mat[j][i] for j in range(3)] for i in range(3)]
+
+m1 = Matrix([[1,2,3],[4,5,6],[7,8,9]])
+m2 = Matrix([[9,8,7],[6,5,4],[3,2,1]])
+print("Matrix Addition:", m1.add(m2))
+print("Matrix Multiplication:", m1.multiply(m2))
+print("Matrix Transpose:", m1.transpose())
+
+
+# 3
+class Solid:
+    def __init__(self, shape, *params):
+        self.shape = shape
+        self.params = params
+
+    def calculate(self):
+        if self.shape == "cube":
+            a = self.params[0]
+            return {"volume": a**3, "surface": 6*a*a}
+        elif self.shape == "cylinder":
+            r, h = self.params
+            return {"volume": 3.14*r*r*h, "surface": 2*3.14*r*(r+h)}
+        else:
+            return {"volume": 0, "surface": 0}
+
+s = Solid("cylinder", 3, 5)
+print("Solid Volume & Surface:", s.calculate())
+
+
+# 4
+class Shape:
+    def __init__(self, shape, *params):
+        self.shape = shape
+        self.params = params
+
+    def calculate(self):
+        if self.shape == "circle":
+            r = self.params[0]
+            return {"area": 3.14*r*r, "circumference": 2*3.14*r}
+        elif self.shape == "square":
+            a = self.params[0]
+            return {"area": a*a, "perimeter": 4*a}
+        else:
+            return {}
+
+s = Shape("circle", 5)
+print("Shape Area & Perimeter:", s.calculate())
+
+
+# 5
+class Time:
+    def __init__(self, h, m):
+        self.h = h
+        self.m = m
+
+    def add(self, other):
+        h = self.h + other.h
+        m = self.m + other.m
+        if m >= 60:
+            h += m // 60
+            m %= 60
+        return Time(h, m)
+
+    def __str__(self):
+        return f"{self.h}h:{self.m}m"
+
+t1 = Time(2, 50)
+t2 = Time(1, 30)
+print("Total Time:", t1.add(t2))
+
+
+# 6
+class Date:
+    def __init__(self, d, m, y):
+        self.date = [d, m, y]
+
+    def __eq__(self, other):
+        return self.date == other.date
+
+d1 = Date(1, 1, 2020)
+d2 = Date(1, 1, 2020)
+print("Dates equal?", d1 == d2)
+
+
+# 7
+class Weather:
+    def __init__(self, data):
+        self.data = data
+
+    def __contains__(self, item):
+        return item in self.data
+
+w = Weather(["rain", "sunny", "cloudy"])
+print("rain" in w)
+print("snow" in w)
+
+
+# 8
+class MyString:
+    def __init__(self, text):
+        self.text = text
+
+    def __iadd__(self, other):
+        self.text += other
+        return self
+
+    def toLower(self):
+        return self.text.lower()
+
+    def toUpper(self):
+        return self.text.upper()
+
+s = MyString("Hello")
+s += " World"
+print("Concatenated:", s.text)
+print("Lower:", s.toLower())
+print("Upper:", s.toUpper())
