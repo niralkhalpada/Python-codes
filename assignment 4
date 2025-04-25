@@ -1,1 +1,100 @@
+# 1
+odd_list = [random.choice(range(1, 100, 2)) for _ in range(5)]
+even_list = [random.choice(range(0, 100, 2)) for _ in range(4)]
+print("Odd List:", odd_list)
+print("Even List:", even_list)
+
+odd_list[2] = even_list
+print("After replacing 3rd element with even list:", odd_list)
+
+flattened = []
+for item in odd_list:
+    if isinstance(item, list):
+        flattened.extend(item)
+    else:
+        flattened.append(item)
+
+flattened.sort()
+print("Flattened and Sorted List:", flattened)
+
+# 2
+random_list = [random.randint(1, 50) for _ in range(20)]
+print("Random List:", random_list)
+search_num = int(input("Enter a number to find: "))
+positions = [i for i, val in enumerate(random_list) if val == search_num]
+print("Positions of", search_num, ":", positions)
+
+# 3
+list_with_duplicates = [random.randint(1, 30) for _ in range(50)]
+print("Original List:", list_with_duplicates)
+no_duplicates = list(set(list_with_duplicates))
+print("List without duplicates:", no_duplicates)
+
+# 4
+mixed_nums = [random.randint(-50, 50) for _ in range(30)]
+positives = [x for x in mixed_nums if x >= 0]
+negatives = [x for x in mixed_nums if x < 0]
+print("Mixed Numbers:", mixed_nums)
+print("Positive Numbers:", positives)
+print("Negative Numbers:", negatives)
+
+# 5
+str_list = ["hello", "world", "python", "rocks", "today"]
+uppercased = [word.upper() for word in str_list]
+print("Original:", str_list)
+print("Uppercase:", uppercased)
+
+# 6
+fahrenheit = [32, 68, 86, 104, 122]
+celsius = [(f - 32) * 5 / 9 for f in fahrenheit]
+print("Fahrenheit:", fahrenheit)
+print("Celsius:", celsius)
+
+# 7
+stack = []
+while True:
+    print("\nStack Menu: 1.Push 2.Pop 3.Display 4.Exit")
+    choice = int(input("Enter choice: "))
+    if choice == 1:
+        val = input("Enter value to push: ")
+        stack.append(val)
+    elif choice == 2:
+        if stack:
+            print("Popped:", stack.pop())
+        else:
+            print("Stack is empty.")
+    elif choice == 3:
+        print("Stack:", stack)
+    elif choice == 4:
+        break
+    else:
+        print("Invalid choice.")
+
+# 8
+queue = deque()
+while True:
+    print("\nQueue Menu: 1.Enqueue 2.Dequeue 3.Display 4.Exit")
+    choice = int(input("Enter choice: "))
+    if choice == 1:
+        val = input("Enter value to enqueue: ")
+        queue.append(val)
+    elif choice == 2:
+        if queue:
+            print("Dequeued:", queue.popleft())
+        else:
+            print("Queue is empty.")
+    elif choice == 3:
+        print("Queue:", list(queue))
+    elif choice == 4:
+        break
+    else:
+        print("Invalid choice.")
+
+# 9
+list1 = [1, 2, 3, 4, 5, 6, 7]
+list2 = [3, 6, 9]
+filtered = [x for x in list1 if x not in list2]
+print("List1:", list1)
+print("List2:", list2)
+print("Filtered (List1 - List2):", filtered)
 
