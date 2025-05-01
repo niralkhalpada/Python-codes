@@ -46,7 +46,4 @@ modifiedString = OneString.replace(RemoveString,"")
 
 print(f"Modified string: {modifiedString}")
 
-#---------------------OR------------------------------
 
-OneString = input("Enter the String: ")
-RemoveString = input("Enter the part to be removed: ")
